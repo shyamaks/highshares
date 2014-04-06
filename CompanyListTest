@@ -1,0 +1,122 @@
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+public class CompanyListTest {
+	private Company[] expectedscompanies;
+
+	@Test
+	public void test3() {
+		expectedscompanies = new Company[3];
+		String name = "CompanyA";
+		String year = "1990";
+		String month = "Feb";
+		Double price = 23.0;
+
+		Company c1 = new Company(name, year, month, price);
+		expectedscompanies[0] = c1;
+		name = "CompanyB";
+		year = "1990";
+		month = "Jan";
+		price = 50.0;
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[1] = c1;
+		name = "CompanyC";
+		year = "1990";
+		month = "Feb";
+		price = 50.0;
+
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[2] = c1;
+		CompanyList companylist = new CompanyList();
+		companylist.setFilePath("C:/Users/nkm/Desktop/Test/test3.csv");
+		try {
+			companylist.loadCompanies();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		companylist.findHighShares();
+
+		assertArrayEquals(expectedscompanies,
+				companylist.getHighShareCompanies());
+
+	}
+	
+	@Test
+	public void test2() {
+		expectedscompanies = new Company[3];
+		String name = "CompanyA";
+		String year = "1990";
+		String month = "Feb";
+		Double price = 23.0;
+
+		Company c1 = new Company(name, year, month, price);
+		expectedscompanies[0] = c1;
+		name = "CompanyB";
+		year = "1990";
+		month = "Jan";
+		price = 50.0;
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[1] = c1;
+		name = "CompanyC";
+		year = "1990";
+		month = "Feb";
+		price = 50.0;
+
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[2] = c1;
+		CompanyList companylist = new CompanyList();
+		companylist.setFilePath("C:/Users/nkm/Desktop/Test/test2.csv");
+		try {
+			companylist.loadCompanies();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		companylist.findHighShares();
+
+		assertArrayEquals(expectedscompanies,
+				companylist.getHighShareCompanies());
+
+	}
+	@Test
+	public void test1() {
+		expectedscompanies = new Company[3];
+		String name = "CompanyA";
+		String year = "1990";
+		String month = "Feb";
+		Double price = 23.0;
+
+		Company c1 = new Company(name, year, month, price);
+		expectedscompanies[0] = c1;
+		name = "CompanyB";
+		year = "1990";
+		month = "Feb";
+		price = 45.0;
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[1] = c1;
+		name = "CompanyC";
+		year = "1990";
+		month = "Feb";
+		price = 50.0;
+
+		c1 = new Company(name, year, month, price);
+		expectedscompanies[2] = c1;
+		CompanyList companylist = new CompanyList();
+		companylist.setFilePath("C:/Users/nkm/Desktop/Test/test1.csv");
+		try {
+			companylist.loadCompanies();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		companylist.findHighShares();
+
+		assertArrayEquals(expectedscompanies,
+				companylist.getHighShareCompanies());
+
+	}
+
+
+}
